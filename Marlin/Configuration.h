@@ -963,7 +963,8 @@
  * Z Servo Probe, such as an endstop switch on a rotating arm.
  */
 #define Z_PROBE_SERVO_NR 0          // Defaults to SERVO 0 connector.
-#define Z_SERVO_ANGLES { 170, 91 }  // Z Servo Deploy and Stow angles
+#define Z_SERVO_ANGLES { 85, 0 }    // Z Servo Deploy and Stow angles
+#define Z_SERVO_MEASURE_ANGLE 45    // Z Servo Angle after deploy (to allow measuring)
 
 /**
  * The BLTouch probe uses a Hall effect sensor and emulates a servo.
@@ -1060,7 +1061,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { -40, 0, 0 }
+#define NOZZLE_TO_PROBE_OFFSET { -7, 0, 0 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1137,7 +1138,7 @@
  */
 #define Z_CLEARANCE_DEPLOY_PROBE    5 // Z Clearance for Deploy/Stow
 #define Z_CLEARANCE_BETWEEN_PROBES  5 // Z Clearance between probe points
-#define Z_CLEARANCE_MULTI_PROBE     2 // Z Clearance between multiple probes
+#define Z_CLEARANCE_MULTI_PROBE     5 // Z Clearance between multiple probes
 #define Z_AFTER_PROBING            10 // Z position after probing is done
 
 #define Z_PROBE_LOW_POINT          -2 // Farthest distance below the trigger-point to go before stopping
