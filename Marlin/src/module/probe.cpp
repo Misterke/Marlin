@@ -541,6 +541,10 @@ bool Probe::probe_down_to_z(const float z, const feedRate_t fr_mm_s) {
   if (probe_triggered && TERN0(BLTOUCH_SLOW_MODE, bltouch.stow())) // Stow in LOW SPEED MODE on every trigger
     return true;
 
+  #if ENABLED(Z_SERVO_INTERMEDIATE_STOW)
+    probe_specific_action(false);  //  Always stow
+  #endif
+
   // Clear endstop flags
   endstops.hit_on_purpose();
 

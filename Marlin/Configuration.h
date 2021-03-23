@@ -727,7 +727,7 @@
 #define X_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define Y_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define Z_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
-#define Z_MIN_PROBE_ENDSTOP_INVERTING false // Set to true to invert the logic of the probe.
+#define Z_MIN_PROBE_ENDSTOP_INVERTING true // Set to true to invert the logic of the probe.
 
 /**
  * Stepper Drivers
@@ -965,6 +965,7 @@
 #define Z_PROBE_SERVO_NR 0          // Defaults to SERVO 0 connector.
 #define Z_SERVO_ANGLES { 85, 0 }    // Z Servo Deploy and Stow angles
 #define Z_SERVO_MEASURE_ANGLE 45    // Z Servo Angle after deploy (to allow measuring)
+#define Z_SERVO_INTERMEDIATE_STOW   // Stow the probe between points
 
 /**
  * The BLTouch probe uses a Hall effect sensor and emulates a servo.
@@ -1061,13 +1062,13 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { -7, 0, 0 }
+#define NOZZLE_TO_PROBE_OFFSET { -7, -5, 0 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
 #define PROBING_MARGIN 0
 #define PROBING_MARGIN_LEFT 10
-#define PROBING_MARGIN_RIGHT 0
+#define PROBING_MARGIN_RIGHT 10
 #define PROBING_MARGIN_BACK 15
 #define PROBING_MARGIN_FRONT 15
 
